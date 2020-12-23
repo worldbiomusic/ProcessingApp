@@ -21,8 +21,8 @@ public abstract class Mover {
     // color
     protected int[] color;
     
-    // dead flag
-    protected boolean dead;
+    // alive flag
+    protected boolean alive;
 
     public Mover(PApplet p) {
 	this(
@@ -54,12 +54,12 @@ public abstract class Mover {
 	this.color = new int[3];
 	this.setColor(0, 0, 0);
 	
-	// dead
-	this.dead = false;
+	// alive
+	this.alive = true;
     }
     
-    public boolean checkDead() {
-	return this.dead;
+    public boolean checkAlive() {
+	return this.alive;
     }
     
     public void checkAroundMovers(List<Mover> movers) {

@@ -48,11 +48,13 @@ public class FishMover extends Mover {
 	 */
 	PVector fishToFoodVector = PVector.sub(this.getLocation(), food.getLocation());
 	float dist = fishToFoodVector.mag();
-	// 거리가 일정 이하일때 이끌리기
+	
+	// 엄청 가까우면 음식 삭제
 	if(dist < 20) {
 	    this.foodTarget = null;
-	    food.dead = true;
+	    food.alive = false;
 	}
+	// 거리가 일정 이하일때 이끌리기
 	else if (dist < 100) {
 	    if(this.foodTarget == null) {
 		// targetFood 등록

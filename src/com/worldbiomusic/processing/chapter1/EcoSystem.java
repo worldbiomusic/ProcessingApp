@@ -24,7 +24,7 @@ public class EcoSystem {
     
     public void update() {
 	// check movers dead
-	this.checkMoversDead();
+	this.checkMoversAlive();
 	
 	// update movers
 	for (int i = 0; i < this.movers.size(); i++) {
@@ -33,13 +33,12 @@ public class EcoSystem {
 	}
     }
     
-    public void checkMoversDead() {
+    public void checkMoversAlive() {
 	for (int i = this.movers.size() - 1; i >= 0; i--) {
-	    if(this.movers.get(i).dead) {
+	    if(!this.movers.get(i).checkAlive()) {
 		this.movers.remove(i);
 	    }
 	}
-
     }
     
     public void display() {
