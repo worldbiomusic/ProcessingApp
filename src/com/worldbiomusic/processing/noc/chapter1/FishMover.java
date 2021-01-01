@@ -1,10 +1,10 @@
-package com.worldbiomusic.processing.chapter1;
+package com.worldbiomusic.processing.noc.chapter1;
 
 import java.util.List;
 
 import processing.core.PApplet;
 
-public class FishMover extends Mover {
+public class FishMover extends Life {
 
     float xTime, yTime;
     FishFoodMover foodTarget;
@@ -32,7 +32,7 @@ public class FishMover extends Mover {
     }
 
     @Override
-    public void checkAroundMovers(List<Mover> movers) {
+    public void checkAroundMovers(List<Life> movers) {
 	super.checkAroundMovers(movers);
 	for (int i = 0; i < movers.size(); i++) {
 	    if (movers.get(i) instanceof FishFoodMover) {

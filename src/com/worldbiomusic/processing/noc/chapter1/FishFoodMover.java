@@ -1,8 +1,8 @@
-package com.worldbiomusic.processing.chapter1;
+package com.worldbiomusic.processing.noc.chapter1;
 
 import processing.core.PApplet;
 
-public class FishFoodMover extends Mover{
+public class FishFoodMover extends Life{
 
     public FishFoodMover(PApplet p, float topspeed) {
 	super(p, topspeed);

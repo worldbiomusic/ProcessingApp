@@ -1,4 +1,4 @@
-package com.worldbiomusic.processing.chapter1;
+package com.worldbiomusic.processing.noc.chapter1;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import processing.core.PApplet;
 
 public class EcoSystem {
-    List<Mover> movers;
+    List<Life> movers;
     PApplet p;
 
     public EcoSystem(PApplet p) {
@@ -14,11 +14,11 @@ public class EcoSystem {
 	this.movers = new ArrayList<>();
     }
     
-    public void addMover(Mover mover) {
+    public void addMover(Life mover) {
 	this.movers.add(mover);
     }
     
-    public void removeMover(Mover mover) {
+    public void removeMover(Life mover) {
 	this.movers.remove(mover);
     }
     

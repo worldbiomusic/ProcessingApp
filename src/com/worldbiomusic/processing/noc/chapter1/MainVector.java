@@ -1,4 +1,4 @@
-package com.worldbiomusic.processing.chapter1;
+package com.worldbiomusic.processing.noc.chapter1;
 
 import java.util.List;
 

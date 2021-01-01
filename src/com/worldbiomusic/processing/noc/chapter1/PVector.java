@@ -1,15 +1,19 @@
-package com.worldbiomusic.processing.chapter1;
+package com.worldbiomusic.processing.noc.chapter1;
 
 import processing.core.PApplet;
 
 public class PVector {
-    static PApplet P;
-    static float xtime = (float) (Math.random() * 0.01), ytime = (float) (Math.random() * 0.0001);
-    float x, y;
+    public static PApplet P;
+    public float x, y;
+    public float xTime, yTime;
 
     public PVector(float x, float y) {
 	this.x = x;
 	this.y = y;
+
+	// perlin noise
+	this.xTime = (float) Math.random() * 50;
+	this.yTime = (float) Math.random() * 100 + 500;
     }
 
     public void add(PVector v) {
@@ -36,17 +40,17 @@ public class PVector {
     }
 
     public static PVector mult(PVector v1, float n) {
-	return new PVector(v1.x * n,v1.y * n);
+	return new PVector(v1.x * n, v1.y * n);
     }
 
     public void div(float n) {
 	this.x /= n;
 	this.y /= n;
     }
-    
+
     public static PVector div(PVector v1, float n) {
-   	return new PVector(v1.x / n,v1.y / n);
-       }
+	return new PVector(v1.x / n, v1.y / n);
+    }
 
     public float mag() {
 	return (float) Math.sqrt(this.x * this.x + this.y * this.y);
@@ -65,22 +69,20 @@ public class PVector {
     }
 
     public static PVector random2D() {
-	PVector v = new PVector((float)Math.random() - 0.5f, (float)Math.random() - 0.5f);
+	PVector v = new PVector((float) Math.random() - 0.5f, (float) Math.random() - 0.5f);
 	v.normalize();
 	return v;
     }
-    
-    public static PVector perlinNoise2D() {
-	xtime += 0.020;
-	ytime += 0.025;
 
-	float x = P.noise(xtime);
-	float y = P.noise(ytime);
+    public void changeWithPerlinNoise() {
+	this.xTime += 0.02;
+	this.yTime += 0.015;
 
-	// noise는 0~1사이의 값을 반환하기 때문에 -0.5하면 됨
-	PVector v = new PVector(x - 0.5f, y - 0.5f);
-	v.normalize();
-	return v;
+	float xNoise = P.noise(this.xTime) - 0.5f;
+	float yNoise = P.noise(this.yTime) - 0.5f;
+
+	this.x = xNoise;
+	this.y = yNoise;
     }
 }
 //

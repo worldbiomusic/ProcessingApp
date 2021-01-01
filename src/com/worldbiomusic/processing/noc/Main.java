@@ -1,7 +1,6 @@
-package com.worldbiomusic.processing;
+package com.worldbiomusic.processing.noc;
 
 import processing.core.PApplet;
-import processing.core.PVector;
 
 public class Main extends PApplet {
 

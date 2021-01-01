@@ -1,4 +1,4 @@
-package com.worldbiomusic.processing.chapter0;
+package com.worldbiomusic.processing.noc.chapter0;
 
 import java.util.Random;
 
