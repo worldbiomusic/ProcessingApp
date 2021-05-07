@@ -1,4 +1,4 @@
-package com.worldbiomusic.processing.noc.chapter1;
+package com.worldbiomusic.processing.noc.chapter1.ecosystem;
 
 import processing.core.PApplet;
 

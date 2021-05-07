@@ -2,7 +2,7 @@ package com.worldbiomusic.processing.noc.chapter2;
 
 import processing.core.PApplet;
 
-public class HeliumBalloon extends Mover{
+public class HeliumBalloon extends Ch2Mover{
 
     public HeliumBalloon(PApplet p) {
 	super(p);

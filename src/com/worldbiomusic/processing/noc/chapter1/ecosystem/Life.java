@@ -1,10 +1,13 @@
-package com.worldbiomusic.processing.noc.chapter1;
+package com.worldbiomusic.processing.noc.chapter1.ecosystem;
 
 import java.util.List;
 
+import com.worldbiomusic.processing.noc.chapter1.Ch1Mover;
+import com.worldbiomusic.processing.noc.chapter1.PVector;
+
 import processing.core.PApplet;
 
-public abstract class Life extends Mover{
+public abstract class Life extends Ch1Mover{
     // color
     protected int[] color;
     
@@ -54,7 +57,7 @@ public abstract class Life extends Mover{
 	p.ellipse(this.getLocation().x, this.getLocation().y, 20, 20);
     }
 
-    protected void setColor(int r, int g, int b) {
+    public void setColor(int r, int g, int b) {
 	this.color[0] = r;
 	this.color[1] = g;
 	this.color[2] = b;

@@ -1,4 +1,4 @@
-package com.worldbiomusic.processing.noc.chapter1;
+package com.worldbiomusic.processing.noc.chapter1.ecosystem;
 
 import java.util.ArrayList;
 import java.util.List;

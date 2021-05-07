@@ -1,6 +1,8 @@
-package com.worldbiomusic.processing.noc.chapter1;
+package com.worldbiomusic.processing.noc.chapter1.ecosystem;
 
 import java.util.List;
+
+import com.worldbiomusic.processing.noc.chapter1.PVector;
 
 import processing.core.PApplet;
 

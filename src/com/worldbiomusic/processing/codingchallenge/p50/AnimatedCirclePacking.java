@@ -1,6 +1,5 @@
 package com.worldbiomusic.processing.codingchallenge.p50;
 
-import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +14,7 @@ public class AnimatedCirclePacking extends ProcessingMain {
     List<PVector> spots;
 
     public static void main(String[] args) {
-	String[] a = { AnimatedCirclePacking.class.getName(), "1932", "1524" };
+	String[] a = { AnimatedCirclePacking.class.getName(), "1089", "629" };
 	ProcessingMain.main(a);
     }
 
@@ -24,7 +23,7 @@ public class AnimatedCirclePacking extends ProcessingMain {
 	this.circles = new ArrayList<>();
 	this.spots = new ArrayList<>();
 	// C:\Users\ljh99\eclipse-workspace\ProcessingApp\src\com\worldbiomusic\processing\codingchallenge\p50\2021.png
-	this.img = loadImage("src\\com\\worldbiomusic\\processing\\codingchallenge\\p50\\new2021.png");
+	this.img = loadImage("src\\com\\worldbiomusic\\processing\\codingchallenge\\p50\\hn.png");
 	this.img.loadPixels();
 
 	for (int x = 0; x < this.img.width; x++) {
@@ -42,15 +41,17 @@ public class AnimatedCirclePacking extends ProcessingMain {
     public void draw() {
 	background(0);
 
-	int total = 10;
+	// 한번 반복에 생성되는 circle갯수 제한
+	int total = 20;
 	int count = 0;
 
 	while (count <= total) {
 	    Circle newC = this.randomNewCircle();
 	    if (newC != null) {
+		// newC가 성공적일때
 		this.circles.add(newC);
+		count++;
 	    }
-	    count++;
 	}
 
 	for (Circle c : this.circles) {
@@ -68,7 +69,7 @@ public class AnimatedCirclePacking extends ProcessingMain {
 	PVector randomSpot = this.spots.get(r);
 	float x = randomSpot.x;
 	float y = randomSpot.y;
-	Circle newC = new Circle(this, x, y);
+	Circle newC = new Circle(this, x, y, (int)random(255));
 
 	if (newC.checkCollipse(this.circles)) {
 	    return null;
